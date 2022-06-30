@@ -11,29 +11,30 @@
 	};
 </script>
 
-<script>
-	export let videos = [];
+<script lang="ts">
+	export let videos: string[] = [];
 </script>
 
 <div id="background">
 	<iframe
-		src="https://www.youtube.com/embed/0jxUZxQBvb8?autoplay=1&mute=1&loop=1"
+		src="https://www.youtube.com/embed/0jxUZxQBvb8?autoplay=1&mute=1&loop=1&&controls=0"
 		title="YouTube video player"
 	/>
 </div>
 <div id="main">
-	<ul id="circle">
+	<div id="center">
 		{#each videos as video, i}
-			<li style="--total-count: {videos.length}; --current:{i}">
-				<iframe
-					src="https://www.youtube.com/embed/{video}"
-					title="YouTube video player"
-					frameborder="0"
-					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-				/>
-			</li>
+			<div style="--total-count: {videos.length}; --current:{i}">
+				<div class="clip-circle">
+					<iframe
+						class="video"
+						src="https://www.youtube.com/embed/{video}?controls=0"
+						title="YouTube video player"
+					/>
+				</div>
+			</div>
 		{/each}
-	</ul>
+	</div>
 </div>
 
 <style lang="scss">
@@ -47,13 +48,17 @@
 
 	#background {
 		position: fixed;
-		width: 120%;
-		height: 120%;
-		left: -10%;
-		top: -10%;
+		width: 100vw;
+		height: 100vh;
+		left: 50%;
+		top: 50%;
 		iframe {
-			width: 100%;
-			height: 100%;
+			display: block;
+			position: absolute;
+			transform: translate(-50%, -50%);
+			min-width: 100vw;
+			min-height: 100vh;
+			aspect-ratio: 16 / 9;
 		}
 	}
 
@@ -65,20 +70,33 @@
 		position: absolute;
 	}
 
-	#circle {
+	#center {
 		position: relative;
 		background-color: red;
-		li {
+		height: 0;
+		margin: 0;
+
+		> * {
 			display: grid;
 			place-content: center;
 			position: fixed;
-			width: 0px;
-			height: 0px;
+			width: 0;
+			height: 0;
+
+			.clip-circle {
+				width: 20vmin;
+				height: 20vmin;
+				overflow: hidden;
+				border-radius: 100%;
+			}
 
 			iframe {
 				// original dimensions: 560 x 315
 				width: 40vmin;
 				height: 22.5vmin;
+				// center
+				margin-left: -10vmin;
+				margin-top: -2vmin;
 			}
 
 			@property --offset {
@@ -89,7 +107,7 @@
 
 			$min: 1;
 			$max: 18; // max number to generate angles for (kind of hacky)
-			$speed: 10; // in seconds
+			$speed: 5; // in seconds
 
 			$radius: 30vmin;
 
@@ -113,6 +131,7 @@
 				}
 			}
 
+			transform-origin: center;
 			animation-name: spin;
 			animation-duration: #{$speed}s;
 			animation-iteration-count: infinite;
@@ -124,6 +143,8 @@
 
 			&:hover {
 				animation-play-state: paused;
+				animation-direction: 0s;
+				z-index: 999 !important;
 			}
 		}
 	}

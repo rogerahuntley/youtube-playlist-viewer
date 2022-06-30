@@ -1,38 +1,24 @@
-# create-svelte
+# azlef trip report landing page
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+I made this for my friend [azlef900](https://www.youtube.com/channel/UCkZjdCdkmeF2ebOGHQOF1gA).
 
-## Creating a project
+## Uses:
 
-If you're seeing this, you've probably already done this step. Congrats!
+sveltekit
+sass
+Youtube Data API
+Neocities API
 
-```bash
-# create a new project in the current directory
-npm init svelte
+## Using:
 
-# create a new project in my-app
-npm init svelte my-app
-```
+1. Clone the project. Run `npm i` in the main directory. (I use node 16 if that helps).
+2. Rename .env-example to .env and add your Google API key.
+3. Change the playlist ID if you want to generate a different playlist.
+4. Change the neocities API key if you want to deploy to neocities.
+5. Run command `npm run dev` and navigate to localhost:3000
 
-## Developing
+## Deploying
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+1. Run `npm run build` and `npm run preview`. Check localhost:3000 to make sure it's working.
+2. Add your neocities API key to the `.env` if you want to deploy to neocities.
+3. Run `npm run deploy`
