@@ -4,21 +4,20 @@ I made this for my friend [azlef900](https://www.youtube.com/channel/UCkZjdCdkme
 
 ## Uses:
 
-sveltekit
-sass
-Youtube Data API
-Neocities API
+- sveltekit
+- sass
+- Youtube Data API
+- Neocities API
 
 ## Using:
 
 1. Clone the project. Run `npm i` in the main directory. (I use node 16 if that helps).
-2. Rename .env-example to .env and add your Google API key.
+2. Rename `.env-example` to `.env` and add your Google API key.
 3. Change the playlist ID if you want to generate a different playlist.
-4. Change the neocities API key if you want to deploy to neocities.
-5. Run command `npm run dev` and navigate to localhost:3000
+4. Run command `npm run dev` and navigate to localhost:3000
 
 ## Deploying
 
 1. Run `npm run build` and `npm run preview`. Check localhost:3000 to make sure it's working.
-2. Add your neocities API key to the `.env` if you want to deploy to neocities.
+2. Add your neocities API key to the `.env`
 3. Run `npm run deploy`
