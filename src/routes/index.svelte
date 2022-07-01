@@ -16,7 +16,7 @@
 
 <div id="background">
 	<iframe
-		src={`https://www.youtube.com/embed/${background_id}?autoplay=1&mute=1&loop=1&&controls=0`}
+		src={`https://www.youtube.com/embed/${background_id}?autoplay=1&mute=1&loop=1&controls=0&modestbranding=1&playsinline=1&rel=0`}
 		title="YouTube video player"
 	/>
 </div>
@@ -27,7 +27,7 @@
 				<div class="clip-circle">
 					<iframe
 						class="video"
-						src="https://www.youtube.com/embed/{video}?controls=0"
+						src="https://www.youtube.com/embed/{video}?controls=0&modestbranding=1&rel=0"
 						title="YouTube video player"
 					/>
 				</div>
