@@ -48,7 +48,7 @@
 	#background {
 		position: fixed;
 		width: 100vw;
-		height: 100vh;
+		height: 100%;
 		left: 50%;
 		top: 50%;
 		iframe {
@@ -56,17 +56,18 @@
 			position: absolute;
 			transform: translate(-50%, -50%);
 			min-width: 100vw;
-			min-height: 100vh;
+			min-height: 100%;
 			aspect-ratio: 16 / 9;
 		}
 	}
 
 	#main {
 		width: 100vw;
-		height: 100vh;
+		height: 100%;
 		display: grid;
 		place-content: center;
 		position: absolute;
+		pointer-events: none;
 	}
 
 	#center {
@@ -86,16 +87,17 @@
 				width: 20vmin;
 				height: 20vmin;
 				overflow: hidden;
-				border-radius: 100%;
+				clip-path: circle(50%);
+				pointer-events: initial;
 			}
 
 			iframe {
-				// original dimensions: 560 x 315
-				width: 40vmin;
-				height: 22.5vmin;
-				// center
-				margin-left: -10vmin;
-				margin-top: -2vmin;
+				height: 30vmin;
+				width: auto;
+				position: relative;
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%, -50%);
 			}
 
 			@property --offset {
@@ -130,11 +132,15 @@
 				}
 			}
 
+			transform: rotate(var(--angle)) translate(#{$radius}) rotate(calc(-1 * var(--angle)));
 			transform-origin: center;
-			animation-name: spin;
-			animation-duration: #{$speed}s;
-			animation-iteration-count: infinite;
-			animation-timing-function: linear;
+
+			@media (hover: hover) {
+				animation-name: spin;
+				animation-duration: #{$speed}s;
+				animation-iteration-count: infinite;
+				animation-timing-function: linear;
+			}
 
 			&:nth-child(even) {
 				animation-direction: reverse;

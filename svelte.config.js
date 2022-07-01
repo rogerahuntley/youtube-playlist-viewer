@@ -12,6 +12,9 @@ const config = {
     prerender: {
       default: true
     },
+    browser:{
+      hydrate: false
+    },
     trailingSlash: 'ignore'
   }
 };
