@@ -1,23 +1,22 @@
 <script context="module">
 	export const load = async ({ fetch }) => {
-		const videos = await fetch('/api/azlef.json');
-		const jsonVideos = await videos.json();
+		const azlefData = await fetch('/api/azlef.json');
+		const jsonData = await azlefData.json();
 
 		return {
-			props: {
-				videos: jsonVideos
-			}
+			props: jsonData
 		};
 	};
 </script>
 
 <script lang="ts">
 	export let videos: string[] = [];
+	export let background_id: string = '';
 </script>
 
 <div id="background">
 	<iframe
-		src="https://www.youtube.com/embed/0jxUZxQBvb8?autoplay=1&mute=1&loop=1&&controls=0"
+		src={`https://www.youtube.com/embed/${background_id}?autoplay=1&mute=1&loop=1&&controls=0`}
 		title="YouTube video player"
 	/>
 </div>

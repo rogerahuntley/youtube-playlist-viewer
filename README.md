@@ -4,8 +4,9 @@ I made this for my friend [azlef900](https://www.youtube.com/channel/UCkZjdCdkme
 
 ## Uses:
 
-- sveltekit
+- svelte/kit
 - sass
+- typescript
 - Youtube Data API
 - Neocities API
 
@@ -14,7 +15,8 @@ I made this for my friend [azlef900](https://www.youtube.com/channel/UCkZjdCdkme
 1. Clone the project. Run `npm i` in the main directory. (I use node 16 if that helps).
 2. Rename `.env-example` to `.env` and add your Google API key.
 3. Change the playlist ID if you want to generate a different playlist.
-4. Run command `npm run dev` and navigate to localhost:3000
+4. Change the background ID if you want to change the video in the background
+5. Run command `npm run dev` and navigate to localhost:3000
 
 ## Deploying
 

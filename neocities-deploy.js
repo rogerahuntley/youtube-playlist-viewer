@@ -13,4 +13,4 @@ async function deploySite () {
   return client.deploy(dirname);
 }
 
-await deploySite().then((report) => console.log('successfully uploaded', `\nfiles to upload: ${report.filesToUpload.length}`, `\nfiles to delete: ${report.filesToDelete.length}`,`\nfiles skipped: ${report.filesSkipped.length}`,));
+await deploySite().then((report) => console.log('successfully uploaded', `\nfiles to upload: ${report.filesToUpload.length}`, `\nfiles to delete: ${report.filesToDelete.length}`,`\nfiles skipped: ${report.filesSkipped.length}`));
