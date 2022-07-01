@@ -2,7 +2,7 @@
 
 I made this for my friend [azlef900](https://www.youtube.com/channel/UCkZjdCdkmeF2ebOGHQOF1gA).
 
-You can check the live version of the site at [azlef900.neocities.org][https://azlef900.neocities.org/]
+You can check the live version of the site at [azlef900.neocities.org](https://azlef900.neocities.org/)
 
 ## Uses:
 
