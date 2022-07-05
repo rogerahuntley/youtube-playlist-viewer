@@ -1,6 +1,8 @@
-# azlef trip report landing page
+# youtube playlist viewer
 
-I made this for my friend [azlef900](https://www.youtube.com/channel/UCkZjdCdkmeF2ebOGHQOF1gA).
+I made this for [azlef900](https://www.youtube.com/channel/UCkZjdCdkmeF2ebOGHQOF1gA) as an experiment, shows off one of his playlists
+
+Built using SvelteKit, once compiled - runs without JavaScript. Animations are CSS-only.
 
 You can check the live version of the site at [azlef900.neocities.org](https://azlef900.neocities.org/)
 
