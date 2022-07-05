@@ -14,7 +14,7 @@ Can be set to use any video as a background / any playlist by modifying environm
 
 ## Using:
 
-1. Clone the project. Run `npm i` in the main directory. (I use node 16 if that helps).
+1. Clone the project. Run `npm i` in the main directory.
 2. Rename `.env-example` to `.env` and add your Google API key.
 3. Change the playlist ID if you want to generate a different playlist.
 4. Change the background ID if you want to change the video in the background
