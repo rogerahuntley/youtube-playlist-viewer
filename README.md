@@ -6,13 +6,11 @@ Built using SvelteKit, once compiled - runs without JavaScript. Animations are C
 
 You can check the live version of the site at [azlef900.neocities.org](https://azlef900.neocities.org/)
 
+Can be set to use any video as a background / any playlist by modifying environment variables.
+
 ## Uses:
 
-- svelte/kit
-- sass
-- typescript
-- Youtube Data API
-- Neocities API
+- Youtube Data API v3
 
 ## Using:
 
